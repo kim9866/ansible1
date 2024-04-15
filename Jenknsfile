@@ -1,19 +1,10 @@
 pipeline {
     agent any
+
     stages {
-        stage('build') {
+        stage('Clone Repository') {
             steps {
-                echo 'building the application...'
-            }
-        }
-        stage('test') {
-            steps {
-                echo 'testing the application...'
-            }
-        }
-        stage('deploy') {
-            steps {
-                echo 'deploying the application...'
+                git branch: 'main', url: "https://github.com/kim9866/ansible1"
             }
         }
     }
